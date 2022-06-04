@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance System</title>
+  <!-- Bootstrap Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url(https://i.postimg.cc/mrZmSCjG/1.png);
+    }
+
+    .block {
+      display: block;
+      width: 100%;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .block:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    .block:hover {
+      background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="text-center font-weight-bold m-2 text-light">Smart Attendance System</h1>
+
+  <div class=" d-flex justify-content-around align-content-around">
+
+    <div class="cam-view col-md-12 col-lg-8 p-4">
+      <div class="camera d-flex align-items-center justify-content-center rounded m-4">
+        <img src="{{ url_for('video_feed') }}" width="85%">
+      </div>
+    </div>
+    <div class="button-view m-4  p-5">
+      <div>
+        <a style="text-decoration:none ;"
+          href="http://localhost/phpmyadmin/index.php?route=/sql&db=face_attendance&table=students&pos=0">
+          <button class="block btn-success rounded">Student Data</button>
+        </a>
+      </div> <br>
+      <div>
+        <a style="text-decoration:none ;"
+          href="http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=face_attendance&table=attendance">
+          <button type="button" class="block btn-danger rounded">Attendance Table</button>
+        </a>
+      </div><br>
+      <div>
+        <a style="text-decoration:none ;" href="http://localhost:5000/info/">
+          <button class="block btn-primary rounded">Register New
+            Student</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  setTimeout(function () {
+    //document.getElementById("div-name").innerHTML='<%=session["username"] %>';
+  }, 5000);
+</script>
+
+</html>
